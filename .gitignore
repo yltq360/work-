@@ -1,0 +1,17 @@
+# Windows and editor files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Local FFmpeg binaries (larger than normal GitHub file limits)
+**/ffmpeg.exe
+**/ffprobe.exe
+
+# MOV to GIF temporary outputs
+**/.mov-to-gif-*-palette.png
+**/.mov-to-gif-*-partial.gif
+
+# Generic temporary files
+*.tmp
+*.bak
+*.log
