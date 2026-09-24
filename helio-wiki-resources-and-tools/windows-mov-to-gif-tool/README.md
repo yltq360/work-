@@ -8,7 +8,7 @@
 
 - `mov-to-gif.bat`：拖放和命令行入口。
 - `mov-to-gif.ps1`：检测工具、读取媒体信息、转换并验收。
-- `bin/README.md`：FFmpeg 下载与放置说明。
+- `ffmpeg-setup-instructions/README.md`：FFmpeg 下载与放置说明。
 
 ## FFmpeg 准备
 
@@ -17,7 +17,7 @@
 1. 当前脚本所在目录；
 2. 系统 `PATH`。
 
-两个程序必须同时存在。缺少任何一个时，脚本会明确报错并返回非零退出码，不会静默失败。Git 仓库不直接保存这两个大型第三方二进制文件；请按 `bin/README.md` 获取并放置，或配置系统 `PATH`。
+两个程序必须同时存在。缺少任何一个时，脚本会明确报错并返回非零退出码，不会静默失败。Git 仓库不直接保存这两个大型第三方二进制文件；请按 `ffmpeg-setup-instructions/README.md` 获取并放置，或配置系统 `PATH`。
 
 ## 最简单的用法
 
