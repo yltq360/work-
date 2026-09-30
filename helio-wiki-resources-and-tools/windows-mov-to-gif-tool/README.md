@@ -1,6 +1,6 @@
 # MOV → GIF（Windows 本地转换工具）
 
-把 MOV 文件拖到 `mov-to-gif.bat` 上，即可在 MOV 所在目录生成同名 GIF。
+双击 `打开MOV转GIF界面.bat`，在窗口里添加或拖入 MOV，即可在 MOV 所在目录生成同名 GIF。原来的 `mov-to-gif.bat` 拖放方式仍然保留。
 
 这个工具的默认策略是：保持源视频的分辨率和帧时间，不主动缩放、不裁剪、不添加降帧滤镜，也不缩短时长。音频会被忽略，因为 GIF 不支持音频。
 
@@ -8,7 +8,9 @@
 
 - `mov-to-gif.bat`：拖放和命令行入口。
 - `mov-to-gif.ps1`：检测工具、读取媒体信息、转换并验收。
-- `ffmpeg-setup-instructions/README.md`：FFmpeg 下载与放置说明。
+- `打开MOV转GIF界面.bat`：最简单的图形界面入口，双击即可。
+- `mov-to-gif-gui.ps1`：图形界面，可添加/拖入多个 MOV、查看状态和完整日志。
+- `ffmpeg.exe` / `ffprobe.exe`：随工具放置的便携版 FFmpeg，可直接使用，无需另外配置系统 `PATH`。
 
 ## FFmpeg 准备
 
@@ -17,11 +19,13 @@
 1. 当前脚本所在目录；
 2. 系统 `PATH`。
 
-两个程序必须同时存在。缺少任何一个时，脚本会明确报错并返回非零退出码，不会静默失败。Git 仓库不直接保存这两个大型第三方二进制文件；请按 `ffmpeg-setup-instructions/README.md` 获取并放置，或配置系统 `PATH`。
+两个程序必须同时存在。缺少任何一个时，脚本会明确报错并返回非零退出码，不会静默失败。Windows 版 FFmpeg 可从 FFmpeg 官网列出的 Windows build 提供方获取。
 
 ## 最简单的用法
 
-把一个或多个 `.mov` 文件直接拖到 `mov-to-gif.bat` 上。
+推荐：双击 `打开MOV转GIF界面.bat`，把一个或多个 `.mov` 拖进窗口，然后点击“开始转换”。也可以点击“添加 MOV”选择文件。转换期间窗口不会消失，完整的 FFmpeg 信息和错误会保留在下方日志中。
+
+也可以把一个或多个 `.mov` 文件直接拖到 `mov-to-gif.bat` 上，继续使用原来的命令行模式。
 
 拖放打开的窗口在转换或报错后会等待按键，不会一闪而过。自动化调用如果不需要等待，可先设置环境变量 `MOV_TO_GIF_NO_PAUSE=1`。
 
